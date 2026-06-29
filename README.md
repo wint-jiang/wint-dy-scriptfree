@@ -7,7 +7,7 @@
 把本仓库 GitHub 链接丢给 **任意 AI Agent**，体验一致：
 
 ```bash
-git clone https://github.com/wint-dy/wint-dy-scriptfree.git
+git clone https://github.com/wint-jiang/wint-dy-scriptfree.git
 cd wint-dy-scriptfree
 python scripts/setup.py
 python scripts/extract.py --check
