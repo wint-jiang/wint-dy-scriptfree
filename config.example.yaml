@@ -1,0 +1,50 @@
+# Copy to config.local.yaml (setup.py does this automatically).
+# Secrets can also be set via environment variables — no manual export needed
+# if the Agent writes config.local.yaml once.
+
+project_root: "."
+
+paths:
+  library: "library"
+  logs: "logs"
+  manifest: "manifest.json"
+
+media:
+  keep_video: true
+  keep_audio: true
+
+rate_limit:
+  min_interval_sec: 5
+  max_interval_sec: 15
+  batch_pause_every: 10
+  batch_pause_min_sec: 30
+  batch_pause_max_sec: 60
+  daily_limit: 50
+
+retry:
+  max_attempts: 2
+  backoff_min_sec: 5
+  backoff_max_sec: 15
+
+performance:
+  soft_timeout_sec: 120
+
+asr:
+  provider: dashscope
+  model: paraformer-v2
+  language_hints: ["zh", "en"]
+
+llm:
+  enabled: false  # 忽略：润色仅通过当次 /rewrite 或 --rewrite 开启
+  # agent = 由当前 IDE/Agent 模型润色（默认，无需单独 Key）
+  # api    = 脚本内调用 OpenAI 兼容 API（需 secrets.llm_api_key）
+  mode: agent
+  model: gpt-4o-mini
+  base_url: "https://api.openai.com/v1"
+  max_tokens: 8192
+
+secrets:
+  # Prefer leaving empty — Agent writes config.local.yaml during onboarding
+  dashscope_api_key: ""
+  llm_api_key: ""
+  douyin_cookie: ""

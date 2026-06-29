@@ -1,0 +1,15 @@
+[project]
+name = "wint-dy-scriptfree"
+version = "0.1.0"
+description = "Douyin script extractor with subtitle-first pipeline"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "httpx>=0.27.0",
+    "pyyaml>=6.0",
+    "dashscope>=1.20.0",
+    "openai>=1.40.0",
+]
+
+[project.scripts]
+dy-extract = "scripts.extract:main"

@@ -1,0 +1,23 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.DS_Store
+
+# 本地密钥与运行时产物
+config.local.yaml
+.secrets.yaml
+manifest.json
+*.mp4
+*.mp3
+*.m4a
+tools/bin/ffmpeg
+
+library/**/*
+!library/.gitkeep
+logs/**/*
+!logs/.gitkeep
+
+# Skill 同步目录（由 scripts/link_skills.py 从 skills/ 生成，可 commit 副本或 setup 时重建）
+# 若需 commit 三端副本以便 clone 即发现 Skill，请勿忽略下列目录

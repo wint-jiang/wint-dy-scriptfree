@@ -1,0 +1,4 @@
+interface:
+  display_name: "Douyin Script Extract"
+  short_description: "抖音口播采集：字幕/ASR → Markdown，可选 /rewrite 润色"
+  default_prompt: "一键部署 wint-dy-scriptfree 并提取用户提供的抖音链接"
